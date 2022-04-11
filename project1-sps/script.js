@@ -1,78 +1,64 @@
-// Step 1 : Create mathematical equation for bot to generate a try
-  // Step 1a: Attach a randomNumber to scissors, paper or stone
+// Step 1 : Create mathematical equation to generate a randomtry
 
-var botTry = function () {
+var generateRandomMove = function () {
   var randomDecimal = Math.random() * 3;
-  var randomTry;
-  var randomNumber = Math.floor(randomDecimal); // scissors, paper, stone
-
-  if (randomNumber == 0) {
-    return "scissors";
-  } 
+  var randomInteger = Math.floor(randomDecimal); // scissors, paper, stone
+  var randomNumber = randomInteger + 1;
+  console.log(`random number generated is: ${randomNumber}`);
   
+  // Step 1a: Attach a randomNumber to scissors, paper or stone (botMove)
+  var randomNumber = generateRandomMove();
+  var botMove;
   if (randomNumber == 1) {
-     return "paper";
+    botMove = "scissors";
+  } else if (randomNumber == 2) {
+    botMove = "paper";
+  } else if (randomNumber == 3) {
+    botMove = "stone";
+    console.log(`botMove generated is: ${botMove}`);
   }
-  
-  if (randomNumber == 2) {
-    return "stone";
 };
 
+// Step 2: Defining the source of inputs for Player & Bot variables
 
-// Step 2: Create a functional logic to determine how player wins the game
+var main = function (input) {
+  var myOutputValue = "";
+  if (input != "scissors" || input != "paper" || input != "stone");
+  myOutputValue = "Welcome to Scissors paper stone! Please input scissors, paper or stone to begin.";
+  {
+  
+  // Step 3: Create a functional logic to determine how player wins the game
   // scissors beats paper not stone
   // paper beats stone not scissors
   // stone beats scissors not paper
+  // Step 3a: Define messaging for various outcomes
 
+  // Scenario 1: Player wins & Bot loses
+  } else if(
+    (input == "scissors" && botMove == "paper") ||
+    (input == "paper" && botMove == "stone") ||
+    (input == "stone" && botMove == "scissors")
+  ); 
+    myOutputValue = "Congrats, you WON!";
+  {;
 
-var playerToWin = function (playerTry, botTry) {
-  return (
-    (playerTry == scissors && botTry == paper) ||
-    (playerTry == paper && botTry == stone) ||
-    (playerTry == stone && botTry == scissors)
-  )
+    // Scenario 2: Player & Bot draws
+  } else if(
+    (input == "scissors" && botMove == "scissors") ||
+    (input == "paper" && botMove == "paper") ||
+    (input == "stone" && botMove == "stone")
+  );
+    myOutputValue = "It's a draw. Please try again.";
+  {;
+
+    // Scenario 3: Player loses & Bot wins
+  } else if (
+    (input == "scissors" && botMove == "stone") ||
+    (input == "paper" && botMove == "scissors") ||
+    (input == "stone" && botMove == "paper")
+  );
+    myOutputValue = "Oh no, you lost. Please try again.";
+  {;
+  }
+return myOutputValue;
 };
-
-
-// Step 3: Create a functional logic to determine if it's a draw
-  // scissors = scissors
-  // paper = paper
-  // stone == stone
-
-var playerToDraw = function (playerTry, botTry) {
-  return (
-    (playerTry == scissors && botTry == scissors) ||
-    (playerTry == paper && botTry == paper) ||
-    (playerTry == stone && botTry == stone)
-  )
-};
-
-
-// Step 4: Create a functional logic to determine if player loses
-  // scissors < stone
-  // paper < scissors
-  // stone < paper
-
-var playerToLose = function (playerTry, botTry) {
-  return (
-    (playerTry == scissors && botTry == stone) ||
-    (playerTry == paper && botTry == scissors) ||
-    (playerTry == stone && botTry == paper)
-  )
-};
-
-
-// Step 5: Define messaging for various outcomes (to Step 2, 3 or 4)
-
-
-if (input == playerToWin) {
-  return "Congrats you WON!";
-};
-
-if (input == playerToDraw) {
-  return "It's a DRAW. Try again.";
-}; 
-
-if (input == playerToLose) {
-  return "Oh no, you LOST"
-}
