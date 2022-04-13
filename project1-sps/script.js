@@ -4,11 +4,13 @@ var generateRandomMove = function () {
   var randomDecimal = Math.random() * 3;
   var randomInteger = Math.floor(randomDecimal); // scissors, paper, stone
   var randomNumber = randomInteger + 1;
+  return randomNumber;
+};
   console.log(`random number generated is: ${randomNumber}`);
   
   // Step 1a: Attach a randomNumber to scissors, paper or stone (botMove)
-  var randomNumber = generateRandomMove();
-  var botMove;
+
+var botMove;
   if (randomNumber == 1) {
     botMove = "scissors";
   } else if (randomNumber == 2) {
@@ -16,7 +18,6 @@ var generateRandomMove = function () {
   } else if (randomNumber == 3) {
     botMove = "stone";
     console.log(`botMove generated is: ${botMove}`);
-  }
 };
 
 // Step 2: Defining the source of inputs for Player & Bot variables
