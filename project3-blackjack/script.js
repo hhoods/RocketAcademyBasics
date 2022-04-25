@@ -100,14 +100,14 @@ var main = function (input) {
     <br> Dealer scored ${dealerCardTotal} <br>
     <br> You have drawn ${playerCard[0].suit}${playerCard[0].rank} and ${playerCard[1].suit}${playerCard[1].rank}.
     <br> You scored ${playerCardTotal} <br>
-    <br> Player, hit or stand?`;
+    <br> Tell me baby, cause I need to know now, hit or stand?`;
 
     // Step 2: Player decides if they want to "hit" or "stand".
     currentGameMode = "hitOrStand";
     console.log(currentGameMode);
   } else if (currentGameMode == "hitOrStand") {
     dealerCardTotal = dealerCard[0].rank + dealerCard[1].rank;
-    if (input == "hit" && dealerCardTotal > 17) {
+    if (input == "hit") {
       playerCard.push(newShuffle.pop());
       playerCardHitTotal =
         playerCard[0].rank + playerCard[1].rank + playerCard[2].rank;
@@ -118,7 +118,7 @@ var main = function (input) {
         myOutputValue = `You have drawn ${playerCard[2].suit}${playerCard[2].rank} <br>
           <br> Your total score is ${playerCardHitTotal}
           <br> Dealer's score is ${dealerCardHitTotal} <br>
-          <br> Dealer wins. Player, better luck next time`;
+          <br> Dealer wins. Hit me baby one more time.`;
       } else if (
         (playerCardHitTotal > 21 && dealerCardHitTotal > 21) ||
         (playerCardHitTotal == 21 && dealerCardHitTotal == 21)
@@ -127,7 +127,7 @@ var main = function (input) {
         myOutputValue = `You have drawn ${playerCard[2].suit}${playerCard[2].rank} <br>
           <br> Your total score is ${playerCardHitTotal}
           <br> Dealer's score is ${dealerCardHitTotal} <br>
-          <br> It's a draw. Please try again`;
+          <br> It's a draw. Hit me baby one more time.`;
       } else if (playerCardHitTotal <= 21 && dealerCardHitTotal > 21) {
         // Scenario 1c: Player score is <= 21 but Dealer score > 21, player automatically wins.
         myOutputValue = `You have drawn ${playerCard[2].suit}${playerCard[2].rank} <br>
@@ -172,7 +172,7 @@ var main = function (input) {
           myOutputValue = `You have drawn ${playerCard[2].suit}${playerCard[2].rank} <br>
           <br> Your total score is ${playerCardHitTotal}
           <br> Dealer's score is ${dealerCardHitTotal} <br>
-          <br> Dealer wins. Player, better luck next time`;
+          <br> Dealer wins. Hit me baby one more time.`;
         }
       } else if (input == "hit" && dealerCardTotal < 17) {
         playerCard.push(newShuffle.pop());
@@ -190,7 +190,7 @@ var main = function (input) {
           <br> Dealer has drawn ${dealerCard[2].suit}${dealerCard[2].rank} <br>
           <br> Your total score is ${playerCardHitTotal}
           <br> Dealer's score is ${dealerCardHitTotal} <br>
-          <br> Dealer wins. Player, better luck next time`;
+          <br> Dealer wins. Hit me baby one more time.`;
         } else if (
           (playerCardHitTotal > 21 && dealerCardHitTotal > 21) ||
           (playerCardHitTotal == 21 && dealerCardHitTotal == 21)
@@ -200,7 +200,7 @@ var main = function (input) {
           <br> Dealer has drawn ${dealerCard[2].suit}${dealerCard[2].rank} <br>
           <br> Your total score is ${playerCardHitTotal}
           <br> Dealer's score is ${dealerCardHitTotal} <br>
-          <br> It's a draw. Please try again`;
+          <br> It's a draw. Hit me baby one more time.`;
         } else if (playerCardHitTotal <= 21 && dealerCardHitTotal > 21) {
           // Scenario 1c: Player score is <= 21 but Dealer score > 21, player automatically wins.
           myOutputValue = `You have drawn ${playerCard[2].suit}${playerCard[2].rank} <br>
@@ -256,14 +256,13 @@ var main = function (input) {
           dealerCard[0].rank + dealerCard[1].rank + dealerCard[2].rank;
         playerCardHitTotal = playerCard[0].rank + playerCard[1].rank;
         if (
-          dealerCardHitTotal > 17 &&
           dealerCardHitTotal <= 21 &&
           dealerCardHitTotal > playerCardHitTotal
         ) {
           myOutputValue = `You have chosen to stand. Dealer has drawn ${dealerCard[2].suit}${dealerCard[2].rank}<br>
               <br> Your score is ${playerCardHitTotal}
               <br> Dealer's score is ${dealerCardHitTotal} <br>
-              <br> Dealer wins. Player, better luck next time`;
+              <br> Dealer wins. Hit me baby one more time.`;
         } else if (dealerCardHitTotal < 17) {
           dealerCard.push(newShuffle.pop());
           dealerCardHitTotal =
@@ -278,7 +277,7 @@ var main = function (input) {
             myOutputValue = `You have chosen to stand. Dealer has drawn ${dealerCard[2].suit}${dealerCard[2].rank} & ${dealerCard[3].suit}${dealerCard[3].rank} <br>
               <br> Your score is ${playerCardHitTotal}
               <br> Dealer's score is ${dealerCardHitTotal} <br>
-              <br> Dealer wins. Player, better luck next time`;
+              <br> Dealer wins. Hit me baby one more time.`;
           } else if (dealerCardHitTotal > 21) {
             myOutputValue = `You have chosen to stand. Dealer has drawn ${dealerCard[2].suit}${dealerCard[2].rank} & ${dealerCard[3].suit}${dealerCard[3].rank} <br>
               <br> Your score is ${playerCardHitTotal}
