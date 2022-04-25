@@ -1,8 +1,20 @@
+var rollDice = function () {
+  var randomDecimal = Math.random() * 3;
+  
+  var randomInteger = Math.floor(randomDecimal);
+  var randomInteger = + 
+  if (randomInteger)
+
+  return diceNumber;
+};
+
+
 var emojiNumberCharactersMain = function (input) {
   // Complete the Base: Emoji Drawing Number of Characters exercise below with emojiNumberCharactersMain as the main function.
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
+
 
 var emojiSquareMain = function (input) {
   // Complete the Base: Emoji Drawing Square exercise below with emojiSquareMain as the main function.
